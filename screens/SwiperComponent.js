@@ -1,7 +1,6 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, Dimensions } from 'react-native';
+import { StyleSheet, Text, View, Image, Dimensions,TouchableOpacity } from 'react-native';
 import Swiper from 'react-native-swiper/src';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export default function App() {
   return (
@@ -38,19 +37,19 @@ export default function App() {
                 <View style={{flexDirection:'row'}}>
                     <TouchableOpacity style={[styles.button],{
                         borderColor: '#3465d9',
-                        borderWidth: 1,
+                        borderWidth: 2,
                         borderRadius: 50,
-                        marginTop:15
+                        marginTop:20
                     }}>
-                        <Text style={{color:'#3465d9'}}>Login As Landlord</Text>
+                        <Text style={{color:'#3465d9',fontSize:25}}>  Landlord  </Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={[styles.button],{
-                        borderColor: '#3465d9',
-                        borderWidth: 1,
+                        backgroundColor: '#3465d9',
                         borderRadius: 50,
-                        marginTop:15}}>
-                         <Text style={{color:'#3465d9'}}>Login As Tenent</Text>
-
+                        marginTop:20,
+                        marginLeft:20
+                    }}>
+                        <Text style={{color:'white',fontSize:25}}>   Tenent   </Text>
                     </TouchableOpacity>
                 </View>
             </View>
@@ -117,3 +116,5 @@ const styles = StyleSheet.create({
       alignItems: 'center'
   }
 });
+
+
