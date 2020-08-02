@@ -1,9 +1,10 @@
 import {createAppContainer} from "react-navigation";
 import { createStackNavigator } from 'react-navigation-stack';
 
-import LoginScreen from './LoginScreen';
-import SignupScreen from './SignupScreen';
+import LandlordScreen from './LandlordScreen';
+import TenentScreen from './TenentScreen';
 import SwiperComponent from './SwiperComponent';
+import LdashboardScreen from './Landlord/Dashboard'
 
 
 const StackNavigator=createStackNavigator({
@@ -13,18 +14,24 @@ const StackNavigator=createStackNavigator({
             headerShown: false
         }
     },
-    Login:{
-        screen: LoginScreen,
+    Landlord:{
+        screen: LandlordScreen,
         navigationOptions:{
             headerShown:false
         }
     },
-    Signup:{
-        screen: SignupScreen,
+    Tenent:{
+        screen: TenentScreen,
         navigationOptions:{
             headerShown:false
+        },
+    Ldashboard:{
+        screen: LdashboardScreen,
+        navigationOptions:{
+            headerShown:true
         }
     }
+}
 })
 
 export default createAppContainer(StackNavigator);
