@@ -82,7 +82,7 @@ export default function App({navigation}) {
         <Text style={{color:'#009bd1', marginTop:15}}>Forgot Password?</Text>
         <View style={styles.button}>
         <TouchableOpacity
-                            onPress={()=>navigation.navigate("Tenent")}
+                            onPress={()=>navigation.navigate("Ldashboard")}
                             style={[styles.signIn],{
                             backgroundColor: '#3465d9',
                             borderRadius: 50

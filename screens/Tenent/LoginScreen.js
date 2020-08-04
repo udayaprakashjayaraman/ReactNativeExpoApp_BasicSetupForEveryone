@@ -4,7 +4,7 @@ import FontAwesome from "react-native-vector-icons/FontAwesome";
 import Feather from "react-native-vector-icons/Feather";
 import * as Animatable from 'react-native-animatable';
 
-export default function App() {
+export default function App({navigation}) {
   const [checkTextInputChange, setCheckTextInputChange] = useState(false);
   const [secureTextEntry, setsecureTextEntry] = useState(true);
   const [username, setUsername] = useState('');
@@ -82,7 +82,7 @@ export default function App() {
         <Text style={{color:'#009bd1', marginTop:15}}>Forgot Password?</Text>
         <View style={styles.button}>
         <TouchableOpacity
-                            onPress={()=>navigation.navigate("Tenent")}
+                            onPress={()=>navigation.navigate("Tdashboard")}
                             style={[styles.signIn],{
                             backgroundColor: '#3465d9',
                             borderRadius: 50

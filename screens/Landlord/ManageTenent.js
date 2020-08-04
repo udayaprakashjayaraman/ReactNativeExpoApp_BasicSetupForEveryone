@@ -1,10 +1,10 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import Sidemenu from './Sidemenu';
+
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Ldashboard</Text>
+      <Text>Manage Tenent</Text>
     </View>
   );
 }
