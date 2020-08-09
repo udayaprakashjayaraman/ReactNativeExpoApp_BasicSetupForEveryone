@@ -6,6 +6,7 @@ import TenentLoginScreen from './Tenent/LoginScreen';
 import SwiperComponent from './SwiperComponent';
 import LdashboardScreen from './Landlord/Dashboard';
 import LManageTenentScreen from './Landlord/ManageTenent';
+import Nav from '../navigation'
 
 
 const StackNavigator=createStackNavigator({
@@ -28,7 +29,7 @@ const StackNavigator=createStackNavigator({
         }
 },
 Ldashboard:{
-    screen: LdashboardScreen,
+    screen: Nav,
     navigationOptions:{
         headerShown:false
     }
