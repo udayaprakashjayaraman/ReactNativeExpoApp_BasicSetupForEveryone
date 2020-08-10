@@ -4,10 +4,38 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { constants } from '../screens/Helper/Constants';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import Icon from 'react-native-vector-icons/Ionicons';
 
-const Stack = createStackNavigator();
+import LandlordLoginScreen from '../screens/Landlord/LoginScreen';
+import TenentLoginScreen from '../screens/Tenent/LoginScreen';
+import SwiperComponent from '../screens/SwiperComponent';
+import LdashboardScreen from '../screens/Landlord/Dashboard';
+import LManageTenentScreen from '../screens/Landlord/ManageTenent';
+
+const HomeStack = createStackNavigator();
+const DetailsStack = createStackNavigator();
 const Drawer = createDrawerNavigator();
 
+const HomeStackScreen=({navigation})=>(
+    <HomeStack.Navigator>
+      <HomeStack.Screen name="SwiperComponent" component={SwiperComponent}/>
+      <HomeStack.Screen name="LandlordLoginScreen" component={LandlordLoginScreen} />
+      <HomeStack.Screen name="TenentLoginScreen" component={TenentLoginScreen} />
+      <HomeStack.Screen name="LdashboardScreen" component={LdashboardScreen} />
+      <HomeStack.Screen name="LManageTenentScreen" component={LManageTenentScreen} />
+    </HomeStack.Navigator>
+);
+
+const DetailStackScreen=({navigation})=>(
+  <DetailsStack.Navigator screenOptions={{headerStyle:{backgroundColor: constants.APP_COLOR},headerTintColor:"#ffff",headerTitleStyle:{fontWeight:'bold'}}}>
+    <DetailsStack.Screen name="Dashboard" component={Dashboard} 
+    options={{title:'Overview', 
+    headerLeft:()=>(
+      <Icon.Button name='ios-menu' size={25} backgroundColor= {constants.APP_COLOR} onPress={()=>navigation.openDrawer()}/>
+    )}}/>
+    <DetailsStack.Screen name="Notifications" component={NotificationsScreen} />
+  </DetailsStack.Navigator>
+);
 
 const Dashboard=({ navigation })=>{
   return (
@@ -57,15 +85,9 @@ function SettingsScreen({ navigation }) {
 
 function MyStack() {
   return (
-    // <Stack.Navigator screenOptions={{headerStyle:{backgroundColor: constants.APP_COLOR},headerTintColor:"#ffff",headerTitleStyle:{fontWeight:'bold'}}}>
-    //   <Stack.Screen name="Dashboard" component={Dashboard} options={{title:'Overview'}}/>
-    //   <Stack.Screen name="Notifications" component={NotificationsScreen} />
-    //   <Stack.Screen name="Profile" component={ProfileScreen} />
-    //   <Stack.Screen name="Settings" component={SettingsScreen} />
-    // </Stack.Navigator>
     <Drawer.Navigator>
-      <Drawer.Screen name="Dashboard" component={Dashboard} />
-      <Drawer.Screen name="NotificationsScreen" component={NotificationsScreen} />
+      <Drawer.Screen name="Dashboard" component={HomeStackScreen} />
+      <Drawer.Screen name="NotificationsScreen" component={DetailStackScreen} />
     </Drawer.Navigator>
   );
 }

@@ -60,7 +60,7 @@ export default function App({ navigation }) {
                     duration={1500}
                     useNativeDriver>
                         <TouchableOpacity
-                            onPress={()=>navigation.navigate("Landlord")}
+                            onPress={()=>navigation.navigate("LandlordLoginScreen")}
                             style={[styles.button],{
                             borderColor: '#3465d9',
                             borderWidth: 2,
