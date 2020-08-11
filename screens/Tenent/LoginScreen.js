@@ -82,12 +82,12 @@ export default function App({navigation}) {
         <Text style={{color:'#009bd1', marginTop:15}}>Forgot Password?</Text>
         <View style={styles.button}>
         <TouchableOpacity
-                            onPress={()=>navigation.navigate("Tdashboard")}
+                            onPress={()=>navigation.navigate("TenentSpace")}
                             style={[styles.signIn],{
                             backgroundColor: '#3465d9',
                             borderRadius: 50
                         }}>
-                            <Text style={{color:'white',fontSize:25, fontFamily:'Cochin', fontWeight:'bold'}}>   Sign In   </Text>
+                            <Text style={{color:'white',fontSize:25, fontWeight:'bold'}}>   Sign In   </Text>
         </TouchableOpacity>
         <Text style={{color:'#009bd1', marginTop:20}}>Not having account? Contact Landlord.. </Text>
         </View>

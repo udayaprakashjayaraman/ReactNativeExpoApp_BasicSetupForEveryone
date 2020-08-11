@@ -3,6 +3,7 @@ import { StyleSheet, Text, View , TextInput, TouchableOpacity} from 'react-nativ
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import Feather from "react-native-vector-icons/Feather";
 import * as Animatable from 'react-native-animatable';
+import { constants } from '../Helper/Constants';
 
 export default function App({navigation}) {
   const [checkTextInputChange, setCheckTextInputChange] = useState(false);
@@ -32,7 +33,7 @@ export default function App({navigation}) {
         <View style={styles.action}>
             <FontAwesome 
              name="user-o"
-             color='#05375a'
+             color= {constants.APP_COLOR}
              size={20}
             />
             <TextInput
@@ -54,7 +55,7 @@ export default function App({navigation}) {
         <View style={styles.action}>
             <FontAwesome 
              name="lock"
-             color='#05375a'
+             color={constants.APP_COLOR}
              size={20}
             />
             <TextInput
@@ -82,12 +83,12 @@ export default function App({navigation}) {
         <Text style={{color:'#009bd1', marginTop:15}}>Forgot Password?</Text>
         <View style={styles.button}>
         <TouchableOpacity
-                            onPress={()=>navigation.navigate("Ldashboard")}
+                            onPress={()=>navigation.navigate("MerchantSpace")}
                             style={[styles.signIn],{
-                            backgroundColor: '#3465d9',
+                            backgroundColor: constants.APP_COLOR,
                             borderRadius: 50
                         }}>
-                            <Text style={{color:'white',fontSize:25, fontFamily:'Cochin', fontWeight:'bold'}}>   Sign In   </Text>
+                            <Text style={{color:'white',fontSize:25, fontWeight:'bold'}}>   Sign In   </Text>
         </TouchableOpacity>
         <Text style={{color:'#009bd1', marginTop:15}}>Login or Register with.. </Text>
         <View style={{flexDirection:'row'}}>
@@ -97,13 +98,13 @@ export default function App({navigation}) {
                     duration={1500}
                     useNativeDriver>
                         <TouchableOpacity
-                            onPress={()=>navigation.navigate("Ldashboard")}
+                            onPress={()=>navigation.navigate("MerchantSpace")}
                             style={[styles.button],{
-                            borderColor: '#3b5998',
+                            borderColor: constants.FACEBOOK_COLOR,
                             borderRadius: 50,
                             marginTop:20
                             }}>
-                            <FontAwesome name="facebook-square" color='#3b5998' size={40}>
+                            <FontAwesome name="facebook-square" color= {constants.FACEBOOK_COLOR} size={40}>
                             <Text style={{fontSize:18}}>acebook</Text>
                             </FontAwesome>
                         </TouchableOpacity>
@@ -114,14 +115,14 @@ export default function App({navigation}) {
                     duration={1500}
                     useNativeDriver>
                         <TouchableOpacity
-                            onPress={()=>navigation.navigate("LdashboardScreen")}
+                            onPress={()=>navigation.navigate("MerchantSpace")}
                             style={[styles.button],{
-                            borderColor: '#db3236',
+                            borderColor: constants.GOOGLE_COLOR,
                             borderRadius: 50,
                             marginTop:20,
                             marginLeft:20
                             }}>
-                            <FontAwesome name="google" color='#db3236' size={40}>
+                            <FontAwesome name="google" color={constants.GOOGLE_COLOR} size={40}>
                             <Text style={{fontSize:18}}>oogle</Text>
                             </FontAwesome>
                         </TouchableOpacity>

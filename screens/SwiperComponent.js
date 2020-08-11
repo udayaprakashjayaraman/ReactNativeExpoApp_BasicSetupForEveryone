@@ -2,6 +2,7 @@ import React, { useState }  from 'react';
 import { StyleSheet, Text, View, Image, Dimensions,TouchableOpacity } from 'react-native';
 import Swiper from 'react-native-swiper/src';
 import * as Animatable from 'react-native-animatable';
+import { constants } from './Helper/Constants';
 
 export default function App({ navigation }) {
     const [animation_landlord, setAnimation_landlord] = useState(null);
@@ -62,12 +63,12 @@ export default function App({ navigation }) {
                         <TouchableOpacity
                             onPress={()=>navigation.navigate("LandlordLoginScreen")}
                             style={[styles.button],{
-                            borderColor: '#3465d9',
+                            borderColor: constants.APP_COLOR,
                             borderWidth: 2,
                             borderRadius: 50,
                             marginTop:20
                             }}>
-                            <Text style={{color:'#3465d9',fontSize:25,fontFamily:'Cochin'}}>  Landlord  </Text>
+                            <Text style={{color:constants.APP_COLOR,fontSize:25}}>  Landlord  </Text>
                         </TouchableOpacity>
                     </Animatable.View>
                     <Animatable.View
@@ -76,14 +77,14 @@ export default function App({ navigation }) {
                     duration={1500}
                     useNativeDriver>
                         <TouchableOpacity
-                            onPress={()=>navigation.navigate("Tenent")}
+                            onPress={()=>navigation.navigate("TenentLoginScreen")}
                             style={[styles.button],{
-                            backgroundColor: '#3465d9',
+                            backgroundColor: constants.APP_COLOR,
                             borderRadius: 50,
                             marginTop:20,
                             marginLeft:20
                         }}>
-                            <Text style={{color:'white',fontSize:25, fontFamily:'Cochin'}}>   Tenent   </Text>
+                            <Text style={{color:'white',fontSize:25}}>   Tenent   </Text>
                         </TouchableOpacity>
                     </Animatable.View>
                 </View>
@@ -121,7 +122,7 @@ const styles = StyleSheet.create({
   title:{
       fontSize:25,
       fontWeight:'bold',
-      color: '#3465d9',
+      color: constants.APP_COLOR,
       textAlign: 'center'
   },
   text:{
@@ -138,7 +139,7 @@ const styles = StyleSheet.create({
       marginVertical:3
   },
   activeDot:{
-      backgroundColor: '#3465d9',
+      backgroundColor: constants.APP_COLOR,
       width:20,
       height:8,
       borderRadius:4,
