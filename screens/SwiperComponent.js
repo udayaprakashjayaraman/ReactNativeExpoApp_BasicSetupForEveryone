@@ -68,7 +68,7 @@ export default function App({ navigation }) {
                             borderRadius: 50,
                             marginTop:20
                             }}>
-                            <Text style={{color:constants.APP_COLOR,fontSize:25}}>  Landlord  </Text>
+                            <Text style={{color:constants.APP_COLOR,fontSize:25}}>  Login  </Text>
                         </TouchableOpacity>
                     </Animatable.View>
                     <Animatable.View
@@ -77,14 +77,14 @@ export default function App({ navigation }) {
                     duration={1500}
                     useNativeDriver>
                         <TouchableOpacity
-                            onPress={()=>navigation.navigate("TenentLoginScreen")}
+                            onPress={()=>navigation.navigate("LandlordRegisterScreen")}
                             style={[styles.button],{
                             backgroundColor: constants.APP_COLOR,
                             borderRadius: 50,
                             marginTop:20,
                             marginLeft:20
                         }}>
-                            <Text style={{color:'white',fontSize:25}}>   Tenent   </Text>
+                            <Text style={{color:'white',fontSize:25}}>   Signup   </Text>
                         </TouchableOpacity>
                     </Animatable.View>
                 </View>

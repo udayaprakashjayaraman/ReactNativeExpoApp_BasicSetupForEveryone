@@ -6,16 +6,8 @@ import {Header, Left, Icon} from 'native-base';
 
 export default function App(navigation) {
   return (
-    <View>
-      <Header style={{backgroundColor:'#01415a'}}>
-        <Left>
-            <Icon style={{color:'#ec6c07'}} name="menu" onPress={()=>this.props.navigation.openDrawer()}/>
-        </Left>
-        <View style={{flex:1, alignItems:'center', justifyContent:'center', paddingRight:"20%"}}>
-            <Text style={{color:'#ec6c07'}}>DashBoard</Text>
-        </View>
-    </Header>
-      <Text  style={styles.container}>Landlord dashboard</Text>
+    <View style={styles.container}>
+      <Text>Landlord dashboard</Text>
     </View>
   );
 }

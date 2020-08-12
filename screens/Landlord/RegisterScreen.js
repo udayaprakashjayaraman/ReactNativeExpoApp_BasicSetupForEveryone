@@ -29,7 +29,7 @@ export default function App({navigation}) {
       <Animatable.View
        animation="fadeInUp"
        style={styles.footer}>
-        <Text style={styles.text_footer}>Username</Text>
+        <Text style={styles.text_footer}>Email Id</Text>
         <View style={styles.action}>
             <FontAwesome 
              name="user-o"
@@ -80,17 +80,16 @@ export default function App({navigation}) {
              />}
             </TouchableOpacity>
         </View>
-        <Text style={{color:'#009bd1', marginTop:15}}>Forgot Password?</Text>
         <View style={styles.button}>
         <TouchableOpacity
                             onPress={()=>navigation.navigate(constants.LANDLORD_DASHBOARD_SCREEN)}
-                            style={[styles.signIn],{
+                            style={[styles.signUp],{
                             backgroundColor: constants.APP_COLOR,
                             borderRadius: 50
                         }}>
-                            <Text style={{color:'white',fontSize:25, fontWeight:'bold'}}>   Sign In   </Text>
+                            <Text style={{color:'white',fontSize:25, fontWeight:'bold'}}>   Sign Up   </Text>
         </TouchableOpacity>
-        <Text style={{color:'#009bd1', marginTop:15}}>Login or Register with.. </Text>
+        <Text style={{color:'#009bd1', marginTop:15}}>Register with.. </Text>
         <View style={{flexDirection:'row'}}>
                     <Animatable.View
                     animation={"bounceInLeft"}
@@ -178,7 +177,7 @@ const styles = StyleSheet.create({
     alignItems:'center',
     marginTop:30
   },
-  signIn:{
+  signUp:{
     width:'100%',
     height:50,
     justifyContent:'center',
