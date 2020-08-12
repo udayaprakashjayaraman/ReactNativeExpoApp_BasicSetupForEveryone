@@ -12,6 +12,9 @@ import LdashboardScreen from '../screens/Landlord/Dashboard';
 import LManageTenentScreen from '../screens/Landlord/ManageTenent';
 import LManagePropertiesScreen from '../screens/Landlord/ManageProperties';
 import TdashboardScreen from '../screens/Tenent/Dashboard';
+import AboutUs from '../screens/Common/AboutUs';
+import PrivacyPolicy from '../screens/Common/PrivacyPolicy';
+import Support from '../screens/Common/Support';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -19,27 +22,28 @@ const Drawer = createDrawerNavigator();
 
 const MerchantSpace=({navigation})=>(
   <Drawer.Navigator initialRouteName="LdashboardScreen" >
-      <Drawer.Screen name="LdashboardScreen" component={LdashboardScreen} options={{ drawerLabel: 'LDashboard' }} options={{title:'Home', 
-    headerLeft:()=>(
-      <Icon.Button name='ios-menu' size={25} backgroundColor= {constants.APP_COLOR} onPress={()=>navigation.openDrawer()}/>
-    )}} />
-      <Drawer.Screen name="LManageTenentScreen" component={LManageTenentScreen} options={{ drawerLabel: 'LTenents' }}/>
-      <Drawer.Screen name="LManagePropertiesScreen" component={LManagePropertiesScreen} options={{ drawerLabel: 'LProperties' }}/>
+      <Drawer.Screen name="LdashboardScreen" component={LdashboardScreen} options={{ drawerLabel: 'Dashboard',title:'Home'}} />
+      <Drawer.Screen name="LManageTenentScreen" component={LManageTenentScreen} options={{ drawerLabel: 'Tenents' }}/>
+      <Drawer.Screen name="LManagePropertiesScreen" component={LManagePropertiesScreen} options={{ drawerLabel: 'Properties' }}/>
+      <Drawer.Screen name="Rate Us" component={PrivacyPolicy}/>
+      <Drawer.Screen name="Privacy Policy" component={PrivacyPolicy}/>
+      <Drawer.Screen name="About us" component={AboutUs}/>
+      <Drawer.Screen name="Support" component={Support}/>
       <Drawer.Screen name="Sign Out" component={SwiperComponent}/>
-    </Drawer.Navigator>
+  </Drawer.Navigator>
 );
 const TenentSpace=({navigation})=>(
   <Drawer.Navigator initialRouteName="TdashboardScreen">
-      <Drawer.Screen name="TdashboardScreen" component={TdashboardScreen} options={{ drawerLabel: 'TDashboard' }} />
-      {/* <Drawer.Screen name="LManageTenentScreen" component={LManageTenentScreen} options={{ drawerLabel: 'TTenents' }}/> */}
+      <Drawer.Screen name="TdashboardScreen" component={TdashboardScreen} options={{ drawerLabel: 'Dashboard' }} />
+      <Drawer.Screen name="Rate Us" component={PrivacyPolicy}/>
+      <Drawer.Screen name="Privacy Policy" component={PrivacyPolicy}/>
+      <Drawer.Screen name="About us" component={AboutUs}/>
+      <Drawer.Screen name="Support" component={Support}/>
       <Drawer.Screen name="Sign Out" component={SwiperComponent}/>
     </Drawer.Navigator>
 );
 
-
-
-
-function MyStack() {
+function MyStack(navigation) {
   return (
     <Stack.Navigator screenOptions={{headerShown:false}}>
       <Stack.Screen name="SwiperComponent" component={SwiperComponent}/>
