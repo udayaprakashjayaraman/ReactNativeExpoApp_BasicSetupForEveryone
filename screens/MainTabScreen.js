@@ -9,11 +9,9 @@ import LandlordLoginScreen from '../screens/Landlord/LoginScreen';
 import LandlordRegisterScreen from '../screens/Landlord/RegisterScreen';
 import SwiperComponent from '../screens/SwiperComponent';
 import DashboardScreen from '../screens/Landlord/Dashboard';
-import ManageTenentScreen from '../screens/Landlord/ManageTenent';
-import ManagePropertiesScreen from '../screens/Landlord/ManageProperties';
-import Aboutus from '../screens/Common/AboutUs';
-import PrivacyPolicy from '../screens/Common/PrivacyPolicy';
-import Support from '../screens/Common/Support';
+import ServiceScreen from './Landlord/Services';
+import MessageScreen from './Landlord/Message';
+import UserProfile from './Landlord/UserProfile';
 
 
 const LoginStack = createStackNavigator();
@@ -27,42 +25,47 @@ const MainTabScreen=()=>(
       initialRouteName={constants.LANDLORD_DASHBOARD_SCREEN}
       activeColor= {constants.APP_COLOR}
       barStyle={{ backgroundColor: "#ffff" }}
-      tabBarBadge={true}      >
+      options={{
+        tabBarIcon: ({ color }) => (
+          <Icon name="ios-person" color={color} size={26} />
+        ),
+      }}
+      >
       <Tab.Screen
         name={constants.LANDLORD_DASHBOARD_SCREEN}
         component={DashboardScreenDrawer}
         options={{
-          tabBarLabel: 'Properties',
+          tabBarLabel:constants.LANDLORD_DASHBOARD_SCREEN ,
           tabBarIcon: ({ color }) => (
             <Icon name="ios-home" color={color} size={26} />
           ),
         }}
       />
       <Tab.Screen
-        name= {constants.MANAGE_TENENT_SCREEN}
+        name= {constants.TENENT_SCREEN}
         component={ServicesScreenDrawer}
         options={{
-          tabBarLabel: 'Services',
+          tabBarLabel:constants.SERVICES,
           tabBarIcon: ({ color }) => (
             <Icon name="ios-build" color={color} size={26} />
           ),
         }}
       />
       <Tab.Screen
-        name= {constants.ABOUT_US_SCREEN}
+        name= {constants.MESSAGE}
         component={MessagesScreenDrawer}
         options={{
-          tabBarLabel: 'Tenent manage',
+          tabBarLabel: constants.MESSAGE,
           tabBarIcon: ({ color }) => (
-            <Icon name="ios-notifications" color={color} size={26} />
+            <Icon name="md-mail" color={color} size={26} />
           ),
         }}
       />
       <Tab.Screen
-        name={constants.MANAGE_PROPERTIES_SCREEN}
-        component={AboutScreenDrawer}
+        name={constants.USER_PROFILE}
+        component={UserScreenDrawer}
         options={{
-          tabBarLabel: 'Properties',
+          tabBarLabel: constants.USER_PROFILE,
           tabBarIcon: ({ color }) => (
             <Icon name="ios-person" color={color} size={26} />
           ),
@@ -114,7 +117,7 @@ const LoginDrawer=({navigation})=>(
         <Icon.Button name='ios-menu' size={35} backgroundColor={constants.APP_COLOR} onPress={()=>navigation.openDrawer()}/>
       )
     }}>
-        <DetailsStack.Screen name={constants.MANAGE_TENENT_SCREEN} component={ManageTenentScreen} options={{
+        <DetailsStack.Screen name={constants.SERVICES} component={ServiceScreen} options={{
           headerLeft:()=>(
             <Icon.Button name='ios-menu' size={35} backgroundColor={constants.APP_COLOR} onPress={()=>navigation.openDrawer()}/>
           )
@@ -135,7 +138,7 @@ const LoginDrawer=({navigation})=>(
         <Icon.Button name='ios-menu' size={35} backgroundColor={constants.APP_COLOR} onPress={()=>navigation.openDrawer()}/>
       )
     }}>
-        <DetailsStack.Screen name={constants.MANAGE_PROPERTIES_SCREEN} component={ManagePropertiesScreen} options={{
+        <DetailsStack.Screen name={constants.MESSAGE} component={MessageScreen} options={{
           headerLeft:()=>(
             <Icon.Button name='ios-menu' size={35} backgroundColor={constants.APP_COLOR} onPress={()=>navigation.openDrawer()}/>
           )
@@ -143,7 +146,7 @@ const LoginDrawer=({navigation})=>(
       </DetailsStack.Navigator>
   );
 
-  const AboutScreenDrawer=({navigation})=>(
+  const UserScreenDrawer=({navigation})=>(
     <DetailsStack.Navigator screenOptions={{
       headerStyle:{
         backgroundColor:constants.APP_COLOR,
@@ -156,7 +159,7 @@ const LoginDrawer=({navigation})=>(
         <Icon.Button name='ios-menu' size={35} backgroundColor={constants.APP_COLOR} onPress={()=>navigation.openDrawer()}/>
       )
     }}>
-        <DetailsStack.Screen name={constants.LANDLORD_DASHBOARD_SCREEN} component={DashboardScreen} options={{
+        <DetailsStack.Screen name={constants.USER_PROFILE} component={UserProfile} options={{
           headerLeft:()=>(
             <Icon.Button name='ios-menu' size={35} backgroundColor={constants.APP_COLOR} onPress={()=>navigation.openDrawer()}/>
           )

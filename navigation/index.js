@@ -12,10 +12,10 @@ import SwiperComponent from '../screens/SwiperComponent';
 import LandlordLoginScreen from '../screens/Landlord/LoginScreen';
 import LandlordRegisterScreen from '../screens/Landlord/RegisterScreen';
 import DashboardScreen from '../screens/Landlord/Dashboard';
-import ManageTenentScreen from '../screens/Landlord/ManageTenent';
-import ManagePropertiesScreen from '../screens/Landlord/ManageProperties';
+import TenentScreen from '../screens/Landlord/Tenent';
+import PropertiesScreen from '../screens/Landlord/Properties';
 import Aboutus from '../screens/Common/AboutUs';
-import PrivacyPolicy from '../screens/Common/PrivacyPolicy';
+import Settings from '../screens/Landlord/Settings';
 import Support from '../screens/Common/Support';
 
 
@@ -40,10 +40,11 @@ export default function App() {
         <Stack.Screen name={constants.LANDLORD_LOGIN_SCREEN} component={LandlordLoginScreen} options={{headerShown:false}} />
         <Stack.Screen name={constants.LANDLORD_REGISTER_SCREEN} component={LandlordRegisterScreen} options={{headerShown:false}} />
         <Stack.Screen name={constants.LANDLORD_DASHBOARD_DRAWER} component={LandlordHome} options={{headerShown:false}} />
-        <Stack.Screen name={constants.MANAGE_TENENT_SCREEN} component={ManageTenentScreen}  />
-        <Stack.Screen name={constants.MANAGE_PROPERTIES_SCREEN} component={ManagePropertiesScreen} />
-        <Stack.Screen name={constants.ABOUT_US_SCREEN} component={Aboutus}  />
-        <Stack.Screen name={constants.PRIVACY_POLICY} component={PrivacyPolicy}  />
+        <Stack.Screen name={constants.LANDLORD_DASHBOARD_SCREEN} component={DashboardScreen}  />
+        <Stack.Screen name={constants.TENENT_SCREEN} component={TenentScreen}  />
+        <Stack.Screen name={constants.PROPERTIES_SCREEN} component={PropertiesScreen} />
+        <Stack.Screen name={constants.ABOUT_US} component={Aboutus}  />
+        <Stack.Screen name={constants.SETTINGS} component={Settings}  />
         <Stack.Screen name={constants.SUPPORT} component={Support}  />
       </Stack.Navigator>
     </NavigationContainer>

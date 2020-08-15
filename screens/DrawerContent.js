@@ -3,6 +3,7 @@ import {View,StyleSheet} from 'react-native';
 import {DrawerContentScrollView,DrawerItem} from '@react-navigation/drawer';
 import {Avatar,Title,Caption,Paragraph,Drawer,Text,TouchableRipple,Switch} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { constants } from './Helper/Constants';
 
 export function DrawerContent(props){
 
@@ -38,27 +39,27 @@ export function DrawerContent(props){
                 <Drawer.Section style={styles.drawerSection}>
                     <DrawerItem 
                     icon={({color,size})=> <Icon name="home-outline" color={color} size={size}/>}
-                    label="Home"
+                    label={constants.LANDLORD_DASHBOARD_SCREEN}
                     onPress={()=>{}}/>
                     <DrawerItem 
                     icon={({color,size})=> <Icon name="bookmark-outline" color={color} size={size}/>}
-                    label="Properties"
+                    label= {constants.PROPERTIES}
                     onPress={()=>{}}/>
                     <DrawerItem 
                     icon={({color,size})=> <Icon name="account-outline" color={color} size={size}/>}
-                    label="Tenents"
+                    label={constants.TENENT}
                     onPress={()=>{}}/>
                     <DrawerItem 
                     icon={({color,size})=> <Icon name="settings-outline" color={color} size={size}/>}
-                    label="Settings"
+                    label={constants.SETTINGS}
                     onPress={()=>{}}/>
                     <DrawerItem 
                     icon={({color,size})=> <Icon name="account-check-outline" color={color} size={size}/>}
-                    label="Support"
+                    label={constants.SUPPORT}
                     onPress={()=>{}}/>
                     <DrawerItem 
                     icon={({color,size})=> <Icon name="account-multiple" color={color} size={size}/>}
-                    label="About us"
+                    label={constants.ABOUT_US}
                     onPress={()=>{}}/>
                 </Drawer.Section>
                 <Drawer.Section title='Preference'>
@@ -76,7 +77,7 @@ export function DrawerContent(props){
             <Drawer.Section style={styles.bottomDrawerSection}>
                 <DrawerItem 
                 icon={({color,size})=> <Icon name="exit-to-app" color={color} size={size}/>}
-                label="Sign Out"
+                label={constants.SIGN_OUT}
                 onPress={()=>{}}/>
             </Drawer.Section>
         </View>

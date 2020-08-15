@@ -4,18 +4,24 @@ const constants = {
     FACEBOOK_COLOR: "#3b5998",
     GOOGLE_COLOR: "#db3236",
 
-    //Screen Names
+    //Screen,Header,Material tab Names
     LANDLORD_LOGIN_DRAWER:"LandlordLoginDrawer",
     LANDLORD_DASHBOARD_DRAWER:"LandlordDashboardDrawer",
     SWIPER_COMPONENT:"SwiperComponent",
     LANDLORD_LOGIN_SCREEN:"LandlordLoginScreen",
     LANDLORD_REGISTER_SCREEN:"LandlordRegisterScreen",
-    LANDLORD_DASHBOARD_SCREEN:"DashboardScreen",
-    MANAGE_TENENT_SCREEN:"ManageTenentScreen",
-    MANAGE_PROPERTIES_SCREEN:"ManagePropertiesScreen",
-    ABOUT_US_SCREEN:"AboutUsScreen",
-    PRIVACY_POLICY:"PrivacyPolicy",
-    SUPPORT:"Support"
+    LANDLORD_DASHBOARD_SCREEN:"Home",
+    TENENT_SCREEN:"TenentScreen",
+    TENENT:"Tenent",
+    PROPERTIES_SCREEN:"PropertiesScreen",
+    PROPERTIES:"Properties",
+    USER_PROFILE:"User",
+    ABOUT_US:"About us",
+    SETTINGS:"Settings",
+    SUPPORT:"Support",
+    SERVICES: "Services",
+    MESSAGE: "Messages",
+    SIGN_OUT: "Sign out"
 
 }
 
