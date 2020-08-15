@@ -11,6 +11,12 @@ import MainTabScreen from '../screens/MainTabScreen';
 import SwiperComponent from '../screens/SwiperComponent';
 import LandlordLoginScreen from '../screens/Landlord/LoginScreen';
 import LandlordRegisterScreen from '../screens/Landlord/RegisterScreen';
+import DashboardScreen from '../screens/Landlord/Dashboard';
+import ManageTenentScreen from '../screens/Landlord/ManageTenent';
+import ManagePropertiesScreen from '../screens/Landlord/ManageProperties';
+import Aboutus from '../screens/Common/AboutUs';
+import PrivacyPolicy from '../screens/Common/PrivacyPolicy';
+import Support from '../screens/Common/Support';
 
 
 const Drawer = createDrawerNavigator();
@@ -34,6 +40,11 @@ export default function App() {
         <Stack.Screen name={constants.LANDLORD_LOGIN_SCREEN} component={LandlordLoginScreen} options={{headerShown:false}} />
         <Stack.Screen name={constants.LANDLORD_REGISTER_SCREEN} component={LandlordRegisterScreen} options={{headerShown:false}} />
         <Stack.Screen name={constants.LANDLORD_DASHBOARD_DRAWER} component={LandlordHome} options={{headerShown:false}} />
+        <Stack.Screen name={constants.MANAGE_TENENT_SCREEN} component={ManageTenentScreen}  />
+        <Stack.Screen name={constants.MANAGE_PROPERTIES_SCREEN} component={ManagePropertiesScreen} />
+        <Stack.Screen name={constants.ABOUT_US_SCREEN} component={Aboutus}  />
+        <Stack.Screen name={constants.PRIVACY_POLICY} component={PrivacyPolicy}  />
+        <Stack.Screen name={constants.SUPPORT} component={Support}  />
       </Stack.Navigator>
     </NavigationContainer>
   );

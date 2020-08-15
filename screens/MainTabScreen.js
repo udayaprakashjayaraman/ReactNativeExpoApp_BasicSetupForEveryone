@@ -25,14 +25,14 @@ const Tab = createMaterialBottomTabNavigator();
 const MainTabScreen=()=>(
 <Tab.Navigator
       initialRouteName={constants.LANDLORD_DASHBOARD_SCREEN}
-      activeColor="#fff"
-      >
+      activeColor= {constants.APP_COLOR}
+      barStyle={{ backgroundColor: "#ffff" }}
+      tabBarBadge={true}      >
       <Tab.Screen
         name={constants.LANDLORD_DASHBOARD_SCREEN}
-        component={LandlordDrawer}
+        component={DashboardScreenDrawer}
         options={{
           tabBarLabel: 'Properties',
-          tabBarColor: constants.APP_COLOR,
           tabBarIcon: ({ color }) => (
             <Icon name="ios-home" color={color} size={26} />
           ),
@@ -40,10 +40,19 @@ const MainTabScreen=()=>(
       />
       <Tab.Screen
         name= {constants.MANAGE_TENENT_SCREEN}
-        component={ManageTenentScreen}
+        component={ServicesScreenDrawer}
+        options={{
+          tabBarLabel: 'Services',
+          tabBarIcon: ({ color }) => (
+            <Icon name="ios-build" color={color} size={26} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name= {constants.ABOUT_US_SCREEN}
+        component={MessagesScreenDrawer}
         options={{
           tabBarLabel: 'Tenent manage',
-          tabBarColor: '#1f65ff',
           tabBarIcon: ({ color }) => (
             <Icon name="ios-notifications" color={color} size={26} />
           ),
@@ -51,10 +60,9 @@ const MainTabScreen=()=>(
       />
       <Tab.Screen
         name={constants.MANAGE_PROPERTIES_SCREEN}
-        component={ManagePropertiesScreen}
+        component={AboutScreenDrawer}
         options={{
           tabBarLabel: 'Properties',
-          tabBarColor: '#694fad',
           tabBarIcon: ({ color }) => (
             <Icon name="ios-person" color={color} size={26} />
           ),
@@ -72,7 +80,7 @@ const LoginDrawer=({navigation})=>(
   );
   
   
-  const LandlordDrawer=({navigation})=>(
+  const DashboardScreenDrawer=({navigation})=>(
     <DetailsStack.Navigator screenOptions={{
       headerStyle:{
         backgroundColor:constants.APP_COLOR,
@@ -90,12 +98,71 @@ const LoginDrawer=({navigation})=>(
             <Icon.Button name='ios-menu' size={35} backgroundColor={constants.APP_COLOR} onPress={()=>navigation.openDrawer()}/>
           )
         }}/>
-        <DetailsStack.Screen name={constants.MANAGE_TENENT_SCREEN} component={ManageTenentScreen}  />
-        <DetailsStack.Screen name={constants.MANAGE_PROPERTIES_SCREEN} component={ManagePropertiesScreen} />
-        <DetailsStack.Screen name={constants.ABOUT_US_SCREEN} component={Aboutus}  />
-        <DetailsStack.Screen name={constants.PRIVACY_POLICY} component={PrivacyPolicy}  />
-        <DetailsStack.Screen name={constants.SUPPORT} component={Support}  />
       </DetailsStack.Navigator>
   );
+  
+  const ServicesScreenDrawer=({navigation})=>(
+    <DetailsStack.Navigator screenOptions={{
+      headerStyle:{
+        backgroundColor:constants.APP_COLOR,
+      }, headerTintColor:"#ffff",
+      headerTitleStyle:{
+        fontWeight:'bold'
+      }
+    }}  options={{
+      headerLeft:()=>(
+        <Icon.Button name='ios-menu' size={35} backgroundColor={constants.APP_COLOR} onPress={()=>navigation.openDrawer()}/>
+      )
+    }}>
+        <DetailsStack.Screen name={constants.MANAGE_TENENT_SCREEN} component={ManageTenentScreen} options={{
+          headerLeft:()=>(
+            <Icon.Button name='ios-menu' size={35} backgroundColor={constants.APP_COLOR} onPress={()=>navigation.openDrawer()}/>
+          )
+        }}/>
+      </DetailsStack.Navigator>
+  );
+  
+  const MessagesScreenDrawer=({navigation})=>(
+    <DetailsStack.Navigator screenOptions={{
+      headerStyle:{
+        backgroundColor:constants.APP_COLOR,
+      }, headerTintColor:"#ffff",
+      headerTitleStyle:{
+        fontWeight:'bold'
+      }
+    }}  options={{
+      headerLeft:()=>(
+        <Icon.Button name='ios-menu' size={35} backgroundColor={constants.APP_COLOR} onPress={()=>navigation.openDrawer()}/>
+      )
+    }}>
+        <DetailsStack.Screen name={constants.MANAGE_PROPERTIES_SCREEN} component={ManagePropertiesScreen} options={{
+          headerLeft:()=>(
+            <Icon.Button name='ios-menu' size={35} backgroundColor={constants.APP_COLOR} onPress={()=>navigation.openDrawer()}/>
+          )
+        }}/>
+      </DetailsStack.Navigator>
+  );
+
+  const AboutScreenDrawer=({navigation})=>(
+    <DetailsStack.Navigator screenOptions={{
+      headerStyle:{
+        backgroundColor:constants.APP_COLOR,
+      }, headerTintColor:"#ffff",
+      headerTitleStyle:{
+        fontWeight:'bold'
+      }
+    }}  options={{
+      headerLeft:()=>(
+        <Icon.Button name='ios-menu' size={35} backgroundColor={constants.APP_COLOR} onPress={()=>navigation.openDrawer()}/>
+      )
+    }}>
+        <DetailsStack.Screen name={constants.LANDLORD_DASHBOARD_SCREEN} component={DashboardScreen} options={{
+          headerLeft:()=>(
+            <Icon.Button name='ios-menu' size={35} backgroundColor={constants.APP_COLOR} onPress={()=>navigation.openDrawer()}/>
+          )
+        }}/>
+      </DetailsStack.Navigator>
+  );
+  
   
   export default MainTabScreen;

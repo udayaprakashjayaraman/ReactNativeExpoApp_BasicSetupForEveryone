@@ -56,6 +56,10 @@ export function DrawerContent(props){
                     icon={({color,size})=> <Icon name="account-check-outline" color={color} size={size}/>}
                     label="Support"
                     onPress={()=>{}}/>
+                    <DrawerItem 
+                    icon={({color,size})=> <Icon name="account-multiple" color={color} size={size}/>}
+                    label="About us"
+                    onPress={()=>{}}/>
                 </Drawer.Section>
                 <Drawer.Section title='Preference'>
                     <TouchableRipple onPress={()=>{toggleTheme()}}>
