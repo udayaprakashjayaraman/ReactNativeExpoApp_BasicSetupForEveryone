@@ -82,7 +82,7 @@ export default function App({navigation}) {
         </View>
         <View style={styles.button}>
         <TouchableOpacity
-                            onPress={()=>navigation.navigate(constants.LANDLORD_DASHBOARD_SCREEN)}
+                            onPress={()=>navigation.navigate(constants.HOME_DRAWER)}
                             style={[styles.signUp],{
                             backgroundColor: constants.APP_COLOR,
                             borderRadius: 50
@@ -97,7 +97,7 @@ export default function App({navigation}) {
                     duration={1500}
                     useNativeDriver>
                         <TouchableOpacity
-                            onPress={()=>navigation.navigate(constants.LANDLORD_DASHBOARD_SCREEN)}
+                            onPress={()=>navigation.navigate(constants.HOME_DRAWER)}
                             style={[styles.button],{
                             borderColor: constants.FACEBOOK_COLOR,
                             borderRadius: 50,
@@ -114,7 +114,7 @@ export default function App({navigation}) {
                     duration={1500}
                     useNativeDriver>
                         <TouchableOpacity
-                            onPress={()=>navigation.navigate(constants.LANDLORD_DASHBOARD_SCREEN)}
+                            onPress={()=>navigation.navigate(constants.HOME_DRAWER)}
                             style={[styles.button],{
                             borderColor: constants.GOOGLE_COLOR,
                             borderRadius: 50,

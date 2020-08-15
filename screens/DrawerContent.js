@@ -38,29 +38,25 @@ export function DrawerContent(props){
                 </View>
                 <Drawer.Section style={styles.drawerSection}>
                     <DrawerItem 
-                    icon={({color,size})=> <Icon name="home-outline" color={color} size={size}/>}
-                    label={constants.LANDLORD_DASHBOARD_SCREEN}
-                    onPress={()=>{}}/>
-                    <DrawerItem 
-                    icon={({color,size})=> <Icon name="bookmark-outline" color={color} size={size}/>}
+                    icon={({color,size})=> <Icon name="city" color={color} size={size}/>}
                     label= {constants.PROPERTIES}
-                    onPress={()=>{}}/>
+                    onPress={()=>{props.navigation.navigate(constants.PROPERTIES_SCREEN)}}/>
                     <DrawerItem 
                     icon={({color,size})=> <Icon name="account-outline" color={color} size={size}/>}
                     label={constants.TENENT}
-                    onPress={()=>{}}/>
+                    onPress={()=>{props.navigation.navigate(constants.TENENT_SCREEN)}}/>
                     <DrawerItem 
                     icon={({color,size})=> <Icon name="settings-outline" color={color} size={size}/>}
                     label={constants.SETTINGS}
-                    onPress={()=>{}}/>
+                    onPress={()=>{props.navigation.navigate(constants.SETTINGS)}}/>
                     <DrawerItem 
                     icon={({color,size})=> <Icon name="account-check-outline" color={color} size={size}/>}
                     label={constants.SUPPORT}
-                    onPress={()=>{}}/>
+                    onPress={()=>{props.navigation.navigate(constants.SUPPORT)}}/>
                     <DrawerItem 
                     icon={({color,size})=> <Icon name="account-multiple" color={color} size={size}/>}
                     label={constants.ABOUT_US}
-                    onPress={()=>{}}/>
+                    onPress={()=>{props.navigation.navigate(constants.ABOUT_US)}}/>
                 </Drawer.Section>
                 <Drawer.Section title='Preference'>
                     <TouchableRipple onPress={()=>{toggleTheme()}}>

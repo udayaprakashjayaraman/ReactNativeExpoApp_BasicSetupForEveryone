@@ -27,7 +27,7 @@ const Stack = createStackNavigator();
 function LandlordHome() {
   return (
     <Drawer.Navigator drawerContent={props => <DrawerContent  {...props}/>} >
-          <Drawer.Screen name={constants.LANDLORD_LOGIN_DRAWER} component={MainTabScreen} />
+          <Drawer.Screen name={constants.LOGIN_DRAWER} component={MainTabScreen} />
   </Drawer.Navigator>
   );
 }
@@ -35,12 +35,24 @@ function LandlordHome() {
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name={constants.SWIPER_COMPONENT} component={SwiperComponent} options={{headerShown:false}} />
-        <Stack.Screen name={constants.LANDLORD_LOGIN_SCREEN} component={LandlordLoginScreen} options={{headerShown:false}} />
-        <Stack.Screen name={constants.LANDLORD_REGISTER_SCREEN} component={LandlordRegisterScreen} options={{headerShown:false}} />
-        <Stack.Screen name={constants.LANDLORD_DASHBOARD_DRAWER} component={LandlordHome} options={{headerShown:false}} />
-        <Stack.Screen name={constants.LANDLORD_DASHBOARD_SCREEN} component={DashboardScreen}  />
+      <Stack.Navigator screenOptions={{
+      headerStyle:{
+        backgroundColor:constants.APP_COLOR,
+      }, headerTintColor:"#ffff",
+      headerTitleStyle:{
+        fontWeight:'bold'
+      }
+    }}
+    options={{
+      headerLeft:()=>(
+        <Icon.Button name='ios-menu' size={35} backgroundColor={constants.APP_COLOR} onPress={()=>{goBack()}}/>
+      )
+    }}>
+        <Stack.Screen name={constants.LOGIN_SWIPER_COMPONENT} component={SwiperComponent} options={{headerShown:false}} />
+        <Stack.Screen name={constants.LOGIN_SCREEN} component={LandlordLoginScreen} options={{headerShown:false}} />
+        <Stack.Screen name={constants.REGISTER_SCREEN} component={LandlordRegisterScreen} options={{headerShown:false}} />
+        <Stack.Screen name={constants.HOME_DRAWER} component={LandlordHome} options={{headerShown:false}} />
+        <Stack.Screen name={constants.DASHBOARD_SCREEN} component={DashboardScreen}  />
         <Stack.Screen name={constants.TENENT_SCREEN} component={TenentScreen}  />
         <Stack.Screen name={constants.PROPERTIES_SCREEN} component={PropertiesScreen} />
         <Stack.Screen name={constants.ABOUT_US} component={Aboutus}  />

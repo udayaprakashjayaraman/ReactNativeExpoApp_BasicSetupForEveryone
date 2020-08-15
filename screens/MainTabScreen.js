@@ -42,7 +42,7 @@ const MainTabScreen=()=>(
         }}
       />
       <Tab.Screen
-        name= {constants.TENENT_SCREEN}
+        name= {constants.SERVICES}
         component={ServicesScreenDrawer}
         options={{
           tabBarLabel:constants.SERVICES,

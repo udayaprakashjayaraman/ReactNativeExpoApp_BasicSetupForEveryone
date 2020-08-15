@@ -61,7 +61,7 @@ export default function App({ navigation }) {
                     duration={1500}
                     useNativeDriver>
                         <TouchableOpacity
-                            onPress={()=>navigation.navigate("LandlordLoginScreen")}
+                            onPress={()=>navigation.navigate(constants.LOGIN_SCREEN)}
                             style={[styles.button],{
                             borderColor: constants.APP_COLOR,
                             borderWidth: 2,
@@ -77,7 +77,7 @@ export default function App({ navigation }) {
                     duration={1500}
                     useNativeDriver>
                         <TouchableOpacity
-                            onPress={()=>navigation.navigate("LandlordRegisterScreen")}
+                            onPress={()=>navigation.navigate(constants.REGISTER_SCREEN)}
                             style={[styles.button],{
                             backgroundColor: constants.APP_COLOR,
                             borderRadius: 50,
