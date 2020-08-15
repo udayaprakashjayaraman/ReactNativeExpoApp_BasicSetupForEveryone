@@ -29,7 +29,7 @@ const constants = {
     // SWIPER_COMPONENT:"SwiperComponent",
     // LANDLORD_LOGIN_SCREEN:"LandlordLoginScreen",
     // LANDLORD_REGISTER_SCREEN:"LandlordRegisterScreen",
-    LANDLORD_DASHBOARD_SCREEN:"Home",
+    // LANDLORD_DASHBOARD_SCREEN:"Home",
     
 }
 

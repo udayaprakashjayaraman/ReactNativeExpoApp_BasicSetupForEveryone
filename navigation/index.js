@@ -42,22 +42,17 @@ export default function App() {
       headerTitleStyle:{
         fontWeight:'bold'
       }
-    }}
-    options={{
-      headerLeft:()=>(
-        <Icon.Button name='ios-menu' size={35} backgroundColor={constants.APP_COLOR} onPress={()=>{goBack()}}/>
-      )
     }}>
         <Stack.Screen name={constants.LOGIN_SWIPER_COMPONENT} component={SwiperComponent} options={{headerShown:false}} />
         <Stack.Screen name={constants.LOGIN_SCREEN} component={LandlordLoginScreen} options={{headerShown:false}} />
         <Stack.Screen name={constants.REGISTER_SCREEN} component={LandlordRegisterScreen} options={{headerShown:false}} />
         <Stack.Screen name={constants.HOME_DRAWER} component={LandlordHome} options={{headerShown:false}} />
-        <Stack.Screen name={constants.DASHBOARD_SCREEN} component={DashboardScreen}  />
-        <Stack.Screen name={constants.TENENT_SCREEN} component={TenentScreen}  />
-        <Stack.Screen name={constants.PROPERTIES_SCREEN} component={PropertiesScreen} />
-        <Stack.Screen name={constants.ABOUT_US} component={Aboutus}  />
-        <Stack.Screen name={constants.SETTINGS} component={Settings}  />
-        <Stack.Screen name={constants.SUPPORT} component={Support}  />
+        <Stack.Screen name={constants.DASHBOARD_SCREEN} component={DashboardScreen} options={{ title: constants.DASHBOARD_SCREEN }} />
+        <Stack.Screen name={constants.TENENT_SCREEN} component={TenentScreen} options={{ title: constants.TENENT }} />
+        <Stack.Screen name={constants.PROPERTIES_SCREEN} component={PropertiesScreen} options={{ title: constants.PROPERTIES }}/>
+        <Stack.Screen name={constants.ABOUT_US} component={Aboutus}  options={{ title: constants.ABOUT_US }}/>
+        <Stack.Screen name={constants.SETTINGS} component={Settings}  options={{ title: constants.SETTINGS }}/>
+        <Stack.Screen name={constants.SUPPORT} component={Support}  options={{ title: constants.SUPPORT }}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

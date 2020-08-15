@@ -32,10 +32,10 @@ const MainTabScreen=()=>(
       }}
       >
       <Tab.Screen
-        name={constants.LANDLORD_DASHBOARD_SCREEN}
+        name={constants.DASHBOARD_SCREEN}
         component={DashboardScreenDrawer}
         options={{
-          tabBarLabel:constants.LANDLORD_DASHBOARD_SCREEN ,
+          tabBarLabel:constants.DASHBOARD_SCREEN ,
           tabBarIcon: ({ color }) => (
             <Icon name="ios-home" color={color} size={26} />
           ),
@@ -77,8 +77,8 @@ const MainTabScreen=()=>(
 const LoginDrawer=({navigation})=>(
     <LoginStack.Navigator screenOptions={{headerShown:false}} >
         <LoginStack.Screen name={constants.SWIPER_COMPONENT} component={SwiperComponent} />
-        <LoginStack.Screen name={constants.LANDLORD_LOGIN_SCREEN} component={LandlordLoginScreen} />
-        <LoginStack.Screen name={constants.LANDLORD_REGISTER_SCREEN} component={LandlordRegisterScreen} />
+        <LoginStack.Screen name={constants.LOGIN_SCREEN} component={LandlordLoginScreen} />
+        <LoginStack.Screen name={constants.REGISTER_SCREEN} component={LandlordRegisterScreen} />
       </LoginStack.Navigator>
   );
   
@@ -96,7 +96,7 @@ const LoginDrawer=({navigation})=>(
         <Icon.Button name='ios-menu' size={35} backgroundColor={constants.APP_COLOR} onPress={()=>navigation.openDrawer()}/>
       )
     }}>
-        <DetailsStack.Screen name={constants.LANDLORD_DASHBOARD_SCREEN} component={DashboardScreen} options={{
+        <DetailsStack.Screen name={constants.DASHBOARD_SCREEN} component={DashboardScreen} options={{
           headerLeft:()=>(
             <Icon.Button name='ios-menu' size={35} backgroundColor={constants.APP_COLOR} onPress={()=>navigation.openDrawer()}/>
           )
