@@ -6,7 +6,7 @@
 */
 
 
-import React, { useEffect } from "react";
+import React from "react";
 import { View, Text, StyleSheet, Button, ToastAndroid } from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { DrawerStack } from "./DrawerStack";
