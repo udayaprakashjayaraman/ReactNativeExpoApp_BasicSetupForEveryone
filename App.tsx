@@ -1,13 +1,9 @@
-import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-// import Header from '../JsHelper/Header';
-import {Header, Left, Icon} from 'native-base';
 
-
-export default function App(navigation) {
+export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Landlord dashboard</Text>
+      <Text>Open up App.tsx to start working on your app!</Text>
     </View>
   );
 }
