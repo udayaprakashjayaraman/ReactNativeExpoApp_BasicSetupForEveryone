@@ -10,26 +10,19 @@
 </p>
 
 ```sh
-npx create-react-native-app -t with-typescript
+git clone https://github.com/udayaprakashjayaraman/ReactNativeExpoApp_Ready2StartBasicSetupForEveryone.git
 ```
 
-TypeScript is a superset of JavaScript which gives you static types and powerful tooling in Visual Studio Code including autocompletion and useful inline warnings for type errors.
+React Native Expo Typescript based Mobile application project setup for any project with basic environment and navigation setup. So Anyone can pull this code and modify it to start the project on the go.
 
 ## 🚀 How to use
 
-#### Creating a new project
+#### Install Dependencies
 
-- Install the CLI: `npm i -g expo-cli`
-- Create a project: `npx create-react-native-app -t with-typescript`
 - `cd` into the project
+- Install the CLI: `npm i` or `yarn i`
+- To Start Project use: `npm start`
 
-### Adding TypeScript to existing projects
-
-- Create a blank TypeScript config: `touch tsconfig.json`
-- Run `yarn start` or `npm run start` to automatically configure TypeScript
-- Rename files to TypeScript, `.tsx` for React components and `.ts` for plain typescript files
-
-> 💡 You can disable the TypeScript setup in Expo CLI with the environment variable `EXPO_NO_TYPESCRIPT_SETUP=1 expo start`
 
 ## 📝 Notes
 
