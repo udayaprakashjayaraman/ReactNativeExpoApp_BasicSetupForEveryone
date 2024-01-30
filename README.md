@@ -52,7 +52,28 @@ The project structure is organized to help you easily navigate and extend it:
   - `screens`: Different screens of the application, including login and register screens.
   - `redux`: Redux store configuration, actions, and reducers.
   - `types`: TypeScript types and interfaces.
+  - `navigation`: Navigation setup with bottom navigator, drawer navigator, and stack navigation.
 - `App.tsx`: The main entry point of the application.
+
+### Navigation
+
+#### Stack Navigation
+The project utilizes the React Navigation library for stack-based navigation. The stack navigator is configured in the src/navigation/StackNavigator.tsx file. You can easily add new screens and customize the navigation options.
+
+#### Drawer Navigation
+The drawer navigator is set up in the src/navigation/DrawerNavigator.tsx file. It provides a navigation drawer that can be accessed by swiping from the left or by pressing the menu icon. Customize the drawer items and appearance according to your app's requirements.
+
+#### Bottom Navigation
+The bottom navigator is configured in the src/navigation/BottomNavigator.tsx file. It provides a tab-based navigation at the bottom of the screen. You can customize the tabs and screens as needed.
+
+
+### Authentication
+
+#### Login and Register Screens
+The login and register screens are implemented in the src/screens/Auth folder. You can find LoginScreen.tsx and RegisterScreen.tsx files. Customize these screens based on your authentication flow.
+
+#### Authentication Handler
+Authentication is managed through the src/auth/AuthHandler.ts file. You can extend this file to include authentication logic, such as user sign-in, sign-up, and token management. Update the Redux actions accordingly to handle authentication state.
 
 ### Redux Integration
 
