@@ -5,10 +5,10 @@
   Description: This file contains the implementation of Drawer Stack Navigation.
 */
 
-import React, { useEffect } from "react";
-import { View, Text } from "react-native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { useNavigation } from "@react-navigation/native";
+import React, { useEffect } from "react";
+import { View, Text } from "react-native";
 
 import BottomStack from "./BottomStack";
 
@@ -53,19 +53,7 @@ const SignOut = () => {
     navigation.navigate("Login" as never);
   }, [navigation]);
 
-  return (
-    <View
-      style={{
-        flex: 1,
-        backgroundColor: "#fff",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
-      {" "}
-      <Text>Signing out...</Text>
-    </View>
-  );
+  return <></>;
 };
 
 export const DrawerStack = (): JSX.Element => {
