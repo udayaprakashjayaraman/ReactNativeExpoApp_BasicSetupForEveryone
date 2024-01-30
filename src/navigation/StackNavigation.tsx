@@ -5,44 +5,25 @@
   Description: This file contains the implementation of Stack Implementations to be handled.
 */
 
-
-import React from "react";
-import { View, Text, StyleSheet, Button, ToastAndroid } from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import Login from "@src/screens/auth/Login";
+import Register from "@src/screens/auth/Register";
+import SplashScreen from "@src/screens/auth/SplashScreen";
+import React from "react";
+
 import { DrawerStack } from "./DrawerStack";
 
 const Stack = createNativeStackNavigator();
 
-const Login = ({ navigation }) => {
-    return (
-      <View style={styles.container}>
-        <Text>This is the home screen</Text>
-        <Button
-          title="Go to Home Screen"
-          onPress={() => navigation.navigate("DrawerStack")} // We added an onPress event which would navigate to the About screen
-        />
-      </View>
-    );
-  };
-
 export const StackNavigation = (): JSX.Element => {
-
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="SplashScreen" component={SplashScreen} />
       <Stack.Screen name="Login" component={Login} />
+      <Stack.Screen name="Register" component={Register} />
       <Stack.Screen name="DrawerStack" component={DrawerStack} />
     </Stack.Navigator>
   );
 };
 
-const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: "#fff",
-      alignItems: "center",
-      justifyContent: "center",
-    },
-  });
-  
-  
 export default StackNavigation;
