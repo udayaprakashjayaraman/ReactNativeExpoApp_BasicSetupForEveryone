@@ -1,0 +1,26 @@
+{
+    "expo": {
+      "name": "Starter Kit",
+      "slug": "starter-kit",
+      "version": "1.0.0",
+      "orientation": "portrait",
+      "icon": "./src/assets/appIcon.png",
+      "userInterfaceStyle": "light",  
+      "ios": {
+        "supportsTablet": true,
+        "bundleIdentifier": "staterKit"
+      },
+      "android": {
+        "adaptiveIcon": {
+          "foregroundImage": "./src/assets/appIcon.png",
+          "backgroundColor": "#ffffff"
+        },
+        "package": "com.udaya.reactstarterkit",
+        "versionCode": 1
+      },
+      "web": {
+        "favicon": "./src/assets/appIcon.png"
+      },
+      "extra": {}
+    }
+  }
