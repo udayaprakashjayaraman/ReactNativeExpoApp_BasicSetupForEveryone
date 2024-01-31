@@ -9,13 +9,15 @@ import { useNavigation } from "@react-navigation/native";
 import globalStyles from "@src/utils/global.style";
 import React, { useState } from "react";
 import { View, Text, TextInput, TouchableOpacity, Image } from "react-native";
+import { schedulePushNotification } from "@src/components/PushNotification";
 
 const Login = () => {
   const navigation = useNavigation();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
+    await schedulePushNotification("Login", "Login Successful on your device", "DrawerStack")
     navigation.navigate("DrawerStack" as never);
   };
 

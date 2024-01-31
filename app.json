@@ -22,5 +22,6 @@
         "favicon": "./src/assets/appIcon.png"
       },
       "extra": {}
-    }
+    },
+    "googleServicesFile": "./google-services.json"
   }

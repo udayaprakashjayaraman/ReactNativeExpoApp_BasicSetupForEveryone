@@ -9,6 +9,7 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import { useNavigation } from "@react-navigation/native";
 import React, { useEffect } from "react";
 import { View, Text } from "react-native";
+import { schedulePushNotification } from "@src/components/PushNotification";
 
 import BottomStack from "./BottomStack";
 
@@ -50,9 +51,16 @@ const SignOut = () => {
   const navigation = useNavigation();
 
   useEffect(() => {
-    navigation.navigate("Login" as never);
-  }, [navigation]);
-
+    const fetchData = async () => {
+      await schedulePushNotification(
+        "Sign Out",
+        "Sign Out Successful on your device",
+        "Home"
+      );
+      navigation.navigate("Login" as never);
+    };
+    fetchData();
+  }, [navigation]);  
   return <></>;
 };
 
